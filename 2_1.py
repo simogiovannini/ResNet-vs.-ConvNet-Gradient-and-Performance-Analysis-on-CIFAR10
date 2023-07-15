@@ -14,7 +14,7 @@ train_dataloader, val_dataloader, test_dataloader = create_dataloaders(train_dat
 n_runs = 10
 
 for i in range(n_runs):
-    n_epochs = 10
+    n_epochs = 20
 
     convnet = ConvNet()
 

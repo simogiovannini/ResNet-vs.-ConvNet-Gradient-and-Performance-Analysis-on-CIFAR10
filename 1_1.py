@@ -9,13 +9,13 @@ from utils.train import train
 from torch.utils.tensorboard import SummaryWriter
 
 
-device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 writer = SummaryWriter('runs/exercise-1_1')
 
 train_data, val_data, test_data = load_cifar10()
 train_dataloader, val_dataloader, test_dataloader = create_dataloaders(train_data, val_data, test_data, batch_size=32)
 
-n_epochs = 10
+n_epochs = 30
 
 
 mlp = MultiLayerPerceptron(input_shape=3*128*128, hidden_units=128, output_shape=10)
