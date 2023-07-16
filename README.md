@@ -8,7 +8,7 @@ In `models/` we define the three architectures that were tested during this labo
 ### MLP
 A simple 4-layers MultiLayerPerceptron is implemented in `models/mlp.py`.
 
-### Convolutional Network
+### Convolutional/Residual Network
 `models/convnet.py` contains the implementation of ResNet34 described in this [paper](https://arxiv.org/abs/1512.03385).
 To compare the effectiveness of residual connections, the user can instantiate the architecture choosing to add skip connections or not through the `skip_connection` parameter specified in the constructor.
 
@@ -28,22 +28,21 @@ The only detail that has to be mentioned is that, while implementing `utils/data
 
 ## Exercise 1.1: Comparing Architectures
 
-In `3_1.py` we applied Reinforce algorithm on gymnasium's [Lunar Lander environment](https://gymnasium.farama.org/environments/box2d/lunar_lander/).
+`1_1.py` contains a comparison between four architectures on CIFAR10:
+- MultiLayerPerceptron
+- ResNet34
+- ConvNet34 (the same architecture as ResNet34 but without residual connections)
+- ResNet50
 
-The algorithm was tested with 3 different values for the `temperature` parameter setting the number of episodes to 30K:
-- `temperature = 0.0` (represented in green)
-- `temperature = 0.8` (represemted in pink)
-- `temperature = (episode/num_episodes) * 0.9` that increases linearly during learning (represemted in yellow)
+Each model was trained for the same number of epochs, using the same train/validation split. Here we analyze the results:
 
-![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/423810aa-9660-4495-ba7f-91b1743d71e3)
+![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/18ba47e7-1d1c-4084-866e-67e4a9c246fd)
 
-![image](https://github.com/simogiovannini/DLA-lab3/assets/53260220/078c4a7a-7cc1-4ea7-b4be-5d471b751d5e)
+![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/487c0372-9911-42ab-b0c2-47ab0ba28ee2)
 
-The first graph represents the average reward collected by the agent during the last 10 episodes while the second represents the number of steps of the last episode.
+MLP is completely uneffective on this task while all the CNNs share the same behaviour: they work nicely but the rapidly overfit. We can see it from the growth of validation loss over time.
 
-Unexpectedly the best performance are provided by the version that always samples from the actions' distribution. The other two runs does not converge at all and it's clear also from the second graph.
-
-The best model reaches an average reward of around 130.
+There is no particular difference between ResNet34 and ResNet50.
 
 
 ## Exercise 3.3: Proximal Policy Optimization
