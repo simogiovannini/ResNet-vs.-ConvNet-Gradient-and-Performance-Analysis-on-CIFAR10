@@ -1,4 +1,4 @@
-# DLA-lab1 (README work in progress)
+# DLA-lab1
 Deep Learning Applications laboratory on CNNs
 
 
