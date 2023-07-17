@@ -61,6 +61,21 @@ We then trained the two models for 20 epochs 10 times and collected information 
 
 After this initial verification, it is possible to say that the skip connections lead to an actual improvement in performance.
 
+The following graphs represent the information collected in two random selected runs: #0 and #5 (ResNet in yellow and plain ConvNet in pink).
+
+![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/963cc891-cd91-4a52-84d8-784932102955)
+
+![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/bb64eaf1-a474-428c-9e3a-fd0721334999)
+
+![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/72dde1db-6712-4482-9c99-59cbe622e232)
+
+![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/130573d3-1622-4eaf-89e8-697c89954ce2)
+
+![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/1f6688a8-d844-4c56-969c-9c5f072824a3)
+
+![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/dd36d96c-d1c8-4194-b75f-8ee15dc7254c)
+
+
 
 ## Exercise 2.3: Class Activation Map
 
