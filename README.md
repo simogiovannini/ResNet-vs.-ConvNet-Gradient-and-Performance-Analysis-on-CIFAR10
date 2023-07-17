@@ -65,6 +65,8 @@ The following graphs represent the information collected in two random selected 
 
 ![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/963cc891-cd91-4a52-84d8-784932102955)
 
+Training loss is shown above and the improvement in performance it's clear.
+
 ![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/bb64eaf1-a474-428c-9e3a-fd0721334999)
 
 ![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/72dde1db-6712-4482-9c99-59cbe622e232)
@@ -73,8 +75,17 @@ The following graphs represent the information collected in two random selected 
 
 ![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/1f6688a8-d844-4c56-969c-9c5f072824a3)
 
+To analyze the behaviour of the two architectures, we tried to study the distribution of the gradients througout the different layers. To compress the information, plots represent the average of the values of the gradients for each layer.
+
+The behaviour seems similar in both the runs and this is confirmed also observing other runs' data:
+1. for the last layer (layer4) there is a substantial difference between the gradient values in favor of ResNet;
+2. one might think that higher gradient values in the last layer would allow the values in the previous layers to remain high: what is claimed is partly true since this is not the case for the second layer;
+3. the proper impact of resnet is visible at layer1 where, especially for run0, values of an order of magnitude higher are also recorded for ResNet;
+4. looking at the values of the ResNet gradients, we also notice a common behavior: there is a rapid descrescence of the values after a certain number of epochs that goes in accordance with the decrease of loss. This indicates a smaller gradient and a consequent more detailed improvement in the behavior of the trained network.
+
 ![image](https://github.com/simogiovannini/DLA-lab1/assets/53260220/dd36d96c-d1c8-4194-b75f-8ee15dc7254c)
 
+In the face of all these improvements, we wanted to verify that the training time was not particularly affected. The time required for each training epoch was then measured, and it can be seen that the training time for ResNet is on average twice as long (and with greater variance) as that required for plain ConvNet.
 
 
 ## Exercise 2.3: Class Activation Map
