@@ -1,4 +1,4 @@
-# DLA-lab1
+# ResNet vs. ConvNet: Gradient and Performance Analysis on CIFAR10
 Deep Learning Applications laboratory on CNNs
 
 
